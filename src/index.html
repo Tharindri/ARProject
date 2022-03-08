@@ -14,7 +14,7 @@
         window.addEventListener('click', function (event) {
           var box = document.getElementById("ticket");
           lastIndex = (lastIndex + 1) % images.length;
-
+          console.log("ticket-listener",lastIndex);
           if(images[lastIndex] === '#userProfile') {
             document.querySelector('#ticket').emit('ticketAnimation');
           }
@@ -28,10 +28,12 @@
     AFRAME.registerComponent('journey-details-listener', {
       init: function () {
         var lastIndex = -1;
-        var visible = ['false', 'false', 'true', 'false'];
+        var visible = ['false', 'false', 'false', 'true', 'false'];
         window.addEventListener('click', function (event) {
           var box = document.getElementById("journey-details");
           lastIndex = (lastIndex + 1) % visible.length;
+          console.log("journey-details",lastIndex);
+
           if(visible[lastIndex] === 'true') {
             document.querySelector('#journey-details').emit('journeyDetailsAnimation');
           }
@@ -41,15 +43,15 @@
       }
     });
 
-    AFRAME.registerComponent('cylinder-info-icon-listener', {
+    AFRAME.registerComponent('cylinder-info1-icon-listener', {
       init: function () {
         var lastIndex = -1;
-        var position = ['-0.25 0.3 0.5', '-0.25 0.1 0.5', '-0.25 0.1 0.5', '-0.25 0.1 0.5'];
+        var position = ['-0.25 0.3 0.5', '-0.25 0.3 0.5', '-0.25 0.3 0.5', '-0.25 0.3 0.5'];
         window.addEventListener('click', function (event) {
           lastIndex = (lastIndex + 1) % position.length;
-          var cylinderUserPhoto = document.getElementById("cylinder-info-icon");
+          var cylinderUserPhoto1 = document.getElementById("cylinder-info1-icon");
 
-          cylinderUserPhoto.setAttribute('position', `${position[lastIndex]}`);
+          cylinderUserPhoto1.setAttribute('position', `${position[lastIndex]}`);
         });
       }
     });
@@ -57,28 +59,55 @@
     AFRAME.registerComponent('cylinder-info2-icon-listener', {
       init: function () {
         var lastIndex = -1;
-        var position = ['-0.25 0.3 1', '-0.25 0.1 0.8', '-0.25 0.1 0.9', '-0.25 0.1 0.9'];
+        var position = ['-0.25 -0.3 1', '-0.25 -0.3 1', '-0.25 -0.3 1', '-0.25 -0.3 1'];
         window.addEventListener('click', function (event) {
           lastIndex = (lastIndex + 1) % position.length;
-          var cylinderUserPhoto = document.getElementById("cylinder-info2-icon");
+          var cylinderUserPhoto2 = document.getElementById("cylinder-info2-icon");
 
-          cylinderUserPhoto.setAttribute('position', `${position[lastIndex]}`);
+          cylinderUserPhoto2.setAttribute('position', `${position[lastIndex]}`);
         });
       }
     });
 
-    AFRAME.registerComponent('cylinder-train-icon-listener', {
+    AFRAME.registerComponent('cylinder-info3-icon-listener', {
       init: function () {
         var lastIndex = -1;
-        var position = ['0.25 0.1 0.5', '0.25 0.3 0.5', '0.25 0.3 0.5', '0.25 0.1 0.5'];
+        var position = ['0.25 0.5 0.5', '0.25 0.5 0.5', '0.25 0.5 0.5', '0.25 0.5 0.5'];
         window.addEventListener('click', function (event) {
           lastIndex = (lastIndex + 1) % position.length;
-          var cylinderUserPhoto = document.getElementById("cylinder-train-icon");
+          var cylinderUserPhoto3 = document.getElementById("cylinder-info3-icon");
 
-          cylinderUserPhoto.setAttribute('position', `${position[lastIndex]}`);
+          cylinderUserPhoto3.setAttribute('position', `${position[lastIndex]}`);
         });
       }
     });
+
+    AFRAME.registerComponent('cylinder-info4-icon-listener', {
+      init: function () {
+        var lastIndex = -1;
+        var position = ['0.25 -0.5 1', '0.25 -0.5 1', '0.25 -0.5 1', '0.25 -0.5 1'];
+        window.addEventListener('click', function (event) {
+          lastIndex = (lastIndex + 1) % position.length;
+          var cylinderUserPhoto4 = document.getElementById("cylinder-info4-icon");
+
+          cylinderUserPhoto4.setAttribute('position', `${position[lastIndex]}`);
+        });
+      }
+    });
+
+    AFRAME.registerComponent('cylinder-info5-icon-listener', {
+      init: function () {
+        var lastIndex = -1;
+        var position = ['0 0 0', '0 0 0', '0 0 0', '0 0 0'];
+        window.addEventListener('click', function (event) {
+          lastIndex = (lastIndex + 1) % position.length;
+          var cylinderUserPhoto5 = document.getElementById("cylinder-info5-icon");
+
+          cylinderUserPhoto5.setAttribute('position', `${position[lastIndex]}`);
+        });
+      }
+    });
+
     </script>
   </head>
   <body>
