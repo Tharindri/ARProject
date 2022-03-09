@@ -3,26 +3,28 @@ import ReactDOM, { render } from 'react-dom';
 import { AFrameRenderer, Marker } from 'react-web-ar';
 import appTicket from './app-ticket.png';
 import journeyDetails from './journey-details.png';
-import informationIcon1 from './image2.jpg';
-import informationIcon2 from './image3.jpg';
-import informationIcon3 from './image4.jpg';
-import informationIcon4 from './image5.jpg';
-import informationIcon5 from './logo.png';
+import informationIcon1 from './image4.jpg';
+import informationIcon2 from './image2.jpg';
+import informationIcon3 from './image3.jpg';
+import informationIcon4 from './image4.jpg';
+import informationIcon5 from './image5.jpg';
 import userProfile from './user-profile.png';
 import backgroundImage1 from './background1.jpg';
+import backgroundImage2 from './background4.gif';
+// import 'aframe';
+import 'aframe-gif-shader';
+
 
 
 class Railcard extends Component {
   render() {
     return (
-      <AFrameRenderer style={{ backgroundImage: `url(${backgroundImage1})` }} arToolKit={{ sourceType: 'webcam' }}>
+      <AFrameRenderer style={{ backgroundImage: `url(${backgroundImage2})` }} arToolKit={{ sourceType: 'webcam' }}>
         <Marker parameters={{
           preset: "pattern",
           type: "pattern",
           url: "https://raw.githubusercontent.com/lbelfield/augmented-reality/master/src/components/trainTicket/train-ticket.patt"
         }}>
-          <a-assets-item img id="appTicket" src={appTicket} />
-          <a-assets-item img id="journeyDetails" src={journeyDetails} />
 
           <a-assets-item img id="informationIcon1" src={informationIcon1} />
           <a-asset-item img id="informationIcon2" src={informationIcon2} />
@@ -30,7 +32,8 @@ class Railcard extends Component {
           <a-asset-item img id="informationIcon4" src={informationIcon4} />
           <a-asset-item img id="informationIcon5" src={informationIcon5} />
 
-
+          <a-assets-item img id="appTicket" src={appTicket} />
+          <a-assets-item img id="journeyDetails" src={journeyDetails} />
           <a-assets-item img id="userProfile" src={userProfile} />
 
           <a-entity camera look-controls mouse-cursor>

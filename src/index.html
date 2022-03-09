@@ -11,17 +11,17 @@
       init: function () {
         var lastIndex = -1;
         var images = ['#userProfile', '#appTicket', '#appTicket', '#appTicket'];
-        window.addEventListener('click', function (event) {
-          var box = document.getElementById("ticket");
-          lastIndex = (lastIndex + 1) % images.length;
-          console.log("ticket-listener",lastIndex);
-          if(images[lastIndex] === '#userProfile') {
-            document.querySelector('#ticket').emit('ticketAnimation');
-          }
+        // window.addEventListener('click', function (event) {
+        //   var box = document.getElementById("ticket");
+        //   lastIndex = (lastIndex + 1) % images.length;
+        //   console.log("ticket-listener",lastIndex);
+        //   if(images[lastIndex] === '#userProfile') {
+        //     document.querySelector('#ticket').emit('ticketAnimation');
+        //   }
 
-          box.setAttribute('material', `src: ${images[lastIndex]}`);
-          box.setAttribute('visible', 'src: true');
-        });
+        //   box.setAttribute('material', `src: ${images[lastIndex]}`);
+        //   box.setAttribute('visible', 'src: true');
+        // });
       }
     });
 
